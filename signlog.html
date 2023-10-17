@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignUp and Login</title>
+    <!-- Link to an external CSS file for styling -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Add the Font Awesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container" id="container">
+    <!-- Container for sign-up form -->
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Create Account</h1>
+            <!-- Container for social media login links -->
+            <div class="social-container">
+                <!-- Update the links for social media login -->
+                <a href="https://www.facebook.com/" class="social"><i class="fa fa-facebook"></i></a>
+                <a href="https://accounts.google.com" class="social"><i class="fa fa-google"></i></a>
+                <a href="https://www.linkedin.com/" class="social"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <!-- Input fields for name, email, and password -->
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button>Sign Up</button>
+        </form>
+    </div>
+    <!-- Container for sign-in form -->
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Sign In</h1>
+            <!-- Container for social media login links -->
+            <div class="social-container">
+                <!-- Update the links for social media login -->
+                <a href="https://www.facebook.com/" class="social"><i class="fa fa-facebook"></i></a>
+                <a href="https://accounts.google.com" class="social"><i class="fa fa-google"></i></a>
+                <a href="https://www.linkedin.com/" class="social"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <span>or use your account</span>
+            <!-- Input fields for email and password -->
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <!-- Link to password reset page -->
+            <a href="password_reset.html">Forgot Your Password</a>
+            <button>Sign In</button>
+        </form>
+    </div>
+    <!-- Container for overlay elements (for switching between sign-up and sign-in) -->
+    <div class="overlay-container">
+        <div class="overlay">
+            <!-- Left overlay panel for sign-in -->
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To stay connected with us, please log in with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <!-- Right overlay panel for sign-up -->
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your details and start your journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for switching between sign-up and sign-in forms -->
+<script type="text/javascript">
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    // Event listener for sign-up button
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+
+    // Event listener for sign-in button
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+</script>
+</body>
+</html>
